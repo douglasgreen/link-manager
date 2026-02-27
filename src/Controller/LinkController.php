@@ -391,52 +391,6 @@ final class LinkController
         $twig = $this->app->getTwig();
         $loader = $twig->getLoader();
 
-        // Header with search bar
-        $loader->setTemplate(
-            'base',
-            <<<'TWIG'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ pageTitle | default('Bookmark Manager') }}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-.list-group-item .btn-group-action {
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-}
-.list-group-item:hover .btn-group-action {
-    opacity: 1;
-}
-.list-group-item.active {
-    font-weight: bold;
-}
-    </style>
-</head>
-<body>
-    {{ include('header') }}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3">
-                {{ include('sidebar') }}
-            </div>
-            <div class="col-md-9">
-                {{ include('main_content') }}
-            </div>
-        </div>
-    </div>
-    {{ include('footer') }}
-    {{ include('modals') }}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/app.js"></script>
-</body>
-</html>
-TWIG
-        );
-
         // Base HTML template with Bootstrap
         $loader->setTemplate(
             'base',
