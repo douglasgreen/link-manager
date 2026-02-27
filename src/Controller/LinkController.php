@@ -283,7 +283,7 @@ final class LinkController
             $isSearching = false;
         }
 
-        // Build page using PageBuilder and Twig
+        // Build page using Twig
         $html = $this->renderPage([
             'pageTitle' => $pageTitle,
             'currentGroup' => $currentGroup,
